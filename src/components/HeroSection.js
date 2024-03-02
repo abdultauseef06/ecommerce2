@@ -1,5 +1,5 @@
 import React from 'react';
-import fashion from 'C:/Users/mohammed tauseef/OneDrive/Desktop/New folder/react/yubitesting/client/src/fashion.webp';
+import fashion from '../fashion.webp';
 import { Link } from 'react-router-dom';
 import './Hero.css';  // Import the CSS file
 
