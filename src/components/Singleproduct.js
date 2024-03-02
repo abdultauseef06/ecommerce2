@@ -20,7 +20,7 @@ const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, SingleProduct } = useProductContext();
   const { id } = useParams();
   const {
-    id:alias,
+
     name,
     company,
     price,

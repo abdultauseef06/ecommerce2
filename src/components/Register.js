@@ -70,8 +70,36 @@ const Register = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
   
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      seterror('Please enter a valid email address.');
+      return;
+    }
+  
+    // Validate phone number format and length
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      seterror('Please enter a valid 10-digit phone number.');
+      return;
+    }
+  
+    // Validate password format
+    if (formData.password.length < 8) {
+      seterror('Password should be at least 8 characters long.');
+      return;
+    }
+  
+    // Validate password contains at least one digit, one lowercase letter, one uppercase letter, and one special character
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+    if (!passwordRegex.test(formData.password)) {
+      seterror('Password should contain at least one digit, one lowercase letter, one uppercase letter, and one special character.');
+      return;
+    }
+  
+    // Validate password and confirmPassword match
     if (formData.password !== formData.confirmPassword) {
-      seterror('Password  do not match');
+      seterror('Passwords do not match.');
       return;
     }
   
@@ -95,14 +123,15 @@ const Register = () => {
           navigate('/');
         }, 2500);
       } else {
-      
-          // Handle other types of errors
-          seterror('Please fill Input Fields Properly.');
+        if (data.msg) {
+          seterror(data.msg); // Display specific error message received from the backend
+        } else {
+          seterror('An error occurred. Please try again.'); // Fallback error message
         }
-      
+      }
     } catch (error) {
       console.log(error);
-      seterror('Please fill Input Fields Properly.');
+      seterror('An error occurred. Please try again.');
     }
   };
   

@@ -144,9 +144,14 @@ const Login = () => {
         setTimeout(() => {
           navigate('/');
         }, 200);
-      } else {
-        setError('Invalid credentials');
+      }else {
+        if (data.message) {
+          setError(data.message); // Display specific error message received from the backend
+        } else {
+          setError('An error occurred. Please try again.'); // Fallback error message
+        }
       }
+    
     } catch (error) {
       console.log(error);
       setError('An error occurred. Please try again.');
