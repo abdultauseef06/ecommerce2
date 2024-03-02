@@ -12,7 +12,8 @@ import AddToCart from './addToCart';
 import Star from './Star';
 
 //const API = "https://api.pujakaitem.com/api/products";
-const API = "http://localhost:5000/api/products";
+//const API = "http://localhost:5000/api/products";
+const API = "https://ecommerce-server-blue.vercel.app/api/products";
 
 
 

@@ -5,7 +5,7 @@ const AppContext = createContext();
 //const API= "https://fakestoreapi.com/products";
 //const API = "https://fake-store-api.mock.beeceptor.com/api/products";
 //const API = "https://api.pujakaitem.com/api/products";
- const API = "http://localhost:5000/api/products";
+ const API = "https://ecommerce-server-blue.vercel.app/api/products";
 
 const initialState={
     isLoading:false,

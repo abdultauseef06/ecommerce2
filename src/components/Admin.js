@@ -25,7 +25,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/contacts/contacts");
+        const response = await fetch("https://ecommerce-server-blue.vercel.app/api/contacts/contacts");
 
         if (response.ok) {
           const data = await response.json();
@@ -44,7 +44,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/orders/orders");
+        const response = await fetch("https://ecommerce-server-blue.vercel.app/api/orders/orders");
 
         if (response.ok) {
           const data = await response.json();
@@ -118,7 +118,7 @@ const generateUniqueId = () => {
   }
 
     try {
-      const response = await fetch("http://localhost:5000/api/products", {
+      const response = await fetch("https://ecommerce-server-blue.vercel.app/api/products", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
