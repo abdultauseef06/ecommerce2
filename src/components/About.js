@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css'; // Make sure to import your CSS file for styling
 import { Link } from 'react-router-dom';
-import im1 from 'C:/Users/mohammed tauseef/OneDrive/Desktop/New folder/react/yubitesting/client/src/im1.webp'
+import im1 from '../im1.webp';
 import { useProductContext } from '../context/Productcontext';
 
 const About = () => {
