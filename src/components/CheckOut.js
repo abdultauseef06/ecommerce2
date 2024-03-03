@@ -262,6 +262,15 @@ const CheckOut = () => {
       <CheckoutButton onClick={handlenewOrder}>
         <button type="button">Place Order</button>
       </CheckoutButton>
+         <NavLink to="/Shop">
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ width: "300px", backgroundColor: "black", color: "greenyellow", borderColor: "greenyellow" }}
+              >
+                Shop Now
+              </button>
+            </NavLink>
     </CheckoutContainer>
   );
 };
