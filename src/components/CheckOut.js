@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { useAuth } from '../store/auth';
 import { useState, useEffect} from 'react';
 import FormatPrice from '../Helpers/FormatPrice';
+import { navigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const CheckOut = () => {
   const location = useLocation();
