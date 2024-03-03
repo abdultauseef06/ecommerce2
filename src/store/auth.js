@@ -10,6 +10,7 @@ export const AuthProvider = ({children})=>{
     console.log(token);
     const storetokenInLS = (serverToken) =>{
         settoken(serverToken)
+        console.log("server",serverToken);
         return localStorage.setItem("token",serverToken);
         }
 
@@ -24,7 +25,7 @@ export const AuthProvider = ({children})=>{
 
     const userAuthentication = async ()=>{
         try {
-             const response = await fetch("http://localhost:5000/api/auth/user",{
+             const response = await fetch("https://ecommerce-server-blue.vercel.app/api/auth/user",{
              method:"GET",
              headers:{Authorization:`Bearer ${token}`}})
 
@@ -35,7 +36,7 @@ export const AuthProvider = ({children})=>{
             }
 
         }catch (error) {
-            
+            console.log("unable to fetch data;");
         }
     }
 

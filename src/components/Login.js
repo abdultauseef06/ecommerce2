@@ -140,6 +140,7 @@ const Login = () => {
       const data = await response.json();
       if (response.ok) {
         setSuccess('Login Successful');
+        console.log("sucess:",data);
         storetokenInLS(data.token);
         setTimeout(() => {
           navigate('/');
