@@ -89,7 +89,7 @@ const CheckOut = () => {
     };
   
     try {
-      const response = await fetch('http://localhost:5000/api/address/add-Address', {
+      const response = await fetch('https://ecommerce-server-blue.vercel.app/api/address/add-Address', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ const CheckOut = () => {
   useEffect(() => {
     const fetchAddresses = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/address/get-Adress/${user.email}`, {
+        const response = await fetch(`https://ecommerce-server-blue.vercel.app/api/address/get-Adress/${user.email}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ const CheckOut = () => {
     console.log(orderData.phone);
 
     try{
-      const respone = await fetch('http://localhost:5000/api/orders/orders',{
+      const respone = await fetch('https://ecommerce-server-blue.vercel.app/api/orders/orders',{
         method:"POST",
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify(orderData)
