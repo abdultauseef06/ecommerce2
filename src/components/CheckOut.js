@@ -176,6 +176,9 @@ const CheckOut = () => {
       })
       if (respone.ok){
         alert("order placed succesfully");
+        setTimeout(() => {
+          navigate('/');
+        }, 200);
       }
     }
     catch(error){
